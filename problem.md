@@ -1,4 +1,4 @@
-## Problem Statement: Lucky Registration Number##
+## Problem Statement: Lucky Registration Number
 
 **Given a vehicle registration number, find whether it is valid, invalid or lucky registration number**
 

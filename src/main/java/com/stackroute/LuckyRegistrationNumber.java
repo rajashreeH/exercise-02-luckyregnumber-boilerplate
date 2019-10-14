@@ -8,9 +8,10 @@ public class LuckyRegistrationNumber {
         return -2;
     }
 
+   	//Do not print anything other than what's expected/asked in problem
     public static void main(String[] args) {
     	//Use Scanner to get input from console
-
+ 
     
     }
 

@@ -26,16 +26,16 @@
 **Do the following in the main method of LuckyRegistrationNumber**
 
 1. Accept Registration number from the console
-2. If the Registration number is invalid, display **Invalid registration number**
-3. If the Registration number is Valid but not lucky, display **Valid registration number**
-4. If the Registration number is Valid and lucky, display **Lucky registration number**
+2. If the Registration number is invalid, display **Invalid Registration number**
+3. If the Registration number is Valid but not lucky, display **Valid Registration number**
+4. If the Registration number is Valid and lucky, display **Lucky Registration number**
 
 ## Example
     Sample Input:
     KA01MG2130
     
     Expected Output:
-    Lucky registration number
+    Lucky Registration number
 --------------------------------------------------------
     Sample Input:
     KA09GG1234

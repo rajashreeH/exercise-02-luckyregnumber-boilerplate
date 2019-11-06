@@ -6,33 +6,28 @@ import java.util.Scanner;
 public class LuckyRegistrationNumber {
 
    
-    public static int checkRegistrationNumber(String regNumber) {
+    private static Scanner scan;
+
+	public static int checkRegistrationNumber(String regNumber) {
     	
     	if(regNumber==null||regNumber.equals("")) {
     		return -1;
     	}
 
-    	String state=regNumber.substring(0, 2);
-    	String stateNum=regNumber.substring(2,4);
-    	String dist = null,distNumber = null;
+    	final String state=regNumber.substring(0, 2);
+    	final String stateNum=regNumber.substring(2,4);
+    	String dist = null;
+    	String distNumber = null;
     	if(regNumber.length()==10) {
     	 dist=regNumber.substring(4,6);
     	 distNumber=regNumber.substring(6,10);
     	}
-    	else if(regNumber.length()==9){
+    	else{
     		 dist=regNumber.substring(4,5);
         	 distNumber=regNumber.substring(5,9);
     	}
-    	else {
-    		return -1;
-    	}
-    	/*System.out.println("state:"+state);
-    	System.out.println("stateNum:"+stateNum);
-    	System.out.println("dist:"+dist);
-    	System.out.println("distNum:"+distNumber);
-    	*/
     	
-    	if((state.equalsIgnoreCase("KA")||state.equalsIgnoreCase("DL"))&&
+    	if(("KA".equalsIgnoreCase(state)||"DL".equalsIgnoreCase(state))&&
     			(stateNum.matches("^[1][0]*$")||stateNum.matches("^[0][1-9]*$")) &&
     			(dist.matches("^[a-zA-Z]*$")) &&
     			(distNumber.matches("^[1-9][0-9]*$"))
@@ -41,43 +36,34 @@ public class LuckyRegistrationNumber {
     		int lastnumber=Integer.parseInt(distNumber);
     		
         	while(lastnumber>0) {
-        		int n=lastnumber%10;
-        		sum=sum+n;
+        		int lastNum=lastnumber%10;
+        		sum=sum+lastNum;
         		lastnumber=lastnumber/10;	
         	}
         	int lucky=0;
-        	if(sum/10==0) {
+        	if(sum/10==0) 
         		lucky=sum;
-        	}
         	else {
         		while(sum>0) {
-            		int n=sum%10;
-            		lucky=lucky+n;
+            		int lastnumber1=sum%10;
+            		lucky=lucky+lastnumber1;
             		sum=sum/10;
             	}
         	}
         	
-    		if(lucky==6) {
+    		if(lucky==6)
     			return 1;
-    		}
-    		else {
+    		else 
     			return 0;
-    		}
     	}
     	return -1;
-    	
-    	
-
-    	
+    	    	
     }
 
    	//Do not print anything other than what's expected/asked in problem
     public static void main(String[] args) {
-    	//Use Scanner to get input from console
-    	Scanner scan=new Scanner(System.in);
-    	String regNum=scan.nextLine();
-    	
-    	
+    	scan = new Scanner(System.in);
+    	final String regNum=scan.nextLine();
     	
     	int check=checkRegistrationNumber(regNum);    
     	if(check==1) {
